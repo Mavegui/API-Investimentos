@@ -1,0 +1,44 @@
+# Arquivos e diretórios do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Arquivos de configuração do ambiente virtual
+venv/
+env/
+.venv/
+
+# Arquivos de banco de dados locais
+*.sqlite3
+*.db
+
+# Arquivos do Docker
+*.pid
+*.tar
+docker-compose.override.yml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDEs
+.vscode/
+.idea/
+
+# Arquivos de teste e relatórios
+htmlcov/
+.coverage
+*.cover
+*.py,cover
+.tox/
+.nox/
+.cache/
+pytest_cache/
