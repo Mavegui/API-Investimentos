@@ -1,18 +1,63 @@
 # Cotas de investimento API
-
-Este projeto tem como objetivo desenvolver uma API em Python para controlar cotas de investimento e calcular a rentabilidade com juros simples.
+Este projeto tem como objetivo desenvolver uma API em Python para gerenciar cotas de investimento e calcular a rentabilidade com juros simples.
 
 Trata-se de um projeto proposto como teste prático de programação em Python, utilizando API, para a vaga de desenvolvedor Python júnior na empresa [Vitalis Invest](https://www.vitalisinvest.com.br/).
 
-## Tecnologias Usadas
-- **Python 3.12+**
-- **FastAPI** - Para a criação da API
-- **SQLAlchemy** - Para comunicação com o banco de dados
-- **SQLite** - Banco utilizado no projeto
-- **Pydantic** - Para validação de dados
-- **Pytest** - Para realizar testes de endpoints
-- **Docker** - Projeto com suporte a containerização
-- **Docker Hub** - Imagem armazenada no Docker Hub
+---
+
+### **Resumo do Projeto**
+Este projeto é voltado exclusivamente para o **desenvolvimento do Back-End** de uma aplicação que gerencia **cotas de investimento**. Ele inclui a criação de uma **API RESTful**, configuração do **banco de dados**, documentação automática e implementação de **endpoints** para operações CRUD e cálculos financeiros.
+
+---
+
+### **Objetivo**
+
+
+Fornecer uma API robusta e bem documentada para:
+
+- **Gerenciar cotas de investimento** (criação, leitura, atualização, listagem e exclusão).
+- **Calcular rentabilidade** e lucro com base em juros simples.
+- **Facilitar a integração com sistemas Front-End** ou outras aplicações.
+
+---
+
+### **Principais Componentes**
+
+1. **API RESTful:**
+   - Desenvolvida com **FastAPI**, garantindo alta performance e facilidade de uso.
+   - Endpoints bem definidos para operações CRUD e cálculos financeiros.
+
+2. **Banco de Dados:**
+   - Configurado com **SQLAlchemy** para gerenciar as cotas de investimento.
+   - Suporte a operações como criação, leitura, atualização e exclusão de registros.
+
+3. **Documentação Automática:**
+   - Gerada automaticamente pelo **Swagger UI**, acessível em `/docs`.
+   - Permite explorar e testar os endpoints diretamente no navegador.
+
+4. **Endpoints Implementados:**
+   - **`POST /cotas/`**: Criar uma nova cota.
+   - **`GET /cotas/`**: Listar todas as cotas com paginação.
+   - **`GET /cotas/{cota_id}`**: Buscar uma cota específica pelo ID.
+   - **`PUT /cotas/{cota_id}`**: Atualizar uma cota existente.
+   - **`DELETE /cotas/{cota_id}`**: Deletar uma cota pelo ID.
+   - **`GET /cotas/{cota_id}/profit`**: Calcular o lucro bruto, líquido e a rentabilidade de uma cota.
+
+5. **Testes Automatizados:**
+   - Implementados com **pytest** para garantir a qualidade e confiabilidade do Back-End.
+
+6. **Containerização:**
+   - O projeto é totalmente containerizado com **Docker**, facilitando a implantação e execução em diferentes ambientes.
+
+---
+
+### **Tecnologias Utilizadas**
+- **FastAPI**: Framework para criação da API.
+- **SQLAlchemy**: ORM para interação com o banco de dados.
+- **Pydantic**: Validação e serialização de dados.
+- **Docker**: Para containerização e fácil implantação.
+- **pytest**: Para testes automatizados.
+- **Banco de dados**; SQLite3
 
 ---
 
@@ -21,7 +66,7 @@ Trata-se de um projeto proposto como teste prático de programação em Python, 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
+   git clone https://github.com/Mavegui/API-Investimentos.git
    ```
 
 2. Instale as dependências:
@@ -34,7 +79,7 @@ Trata-se de um projeto proposto como teste prático de programação em Python, 
 
    ```bash
    # No terminal
-   python -m app.nomeDatabase
+   python -m app.create_db
 
 4. Execute o servidor da API:
 
@@ -71,33 +116,6 @@ A imagem deste projeto está disponível no Docker Hub. Para utilizá-la, siga o
    docker pull mavegui/api-investimentos:latest
    ```
 
----
-
-## Docker
-
-O projeto pode ser executado dentro de um container Docker. Para isso, siga os passos abaixo:
-
-1. **Construa a imagem Docker**:
-
-   ```bash
-   docker build -t cotas-investimento-api .
-   ```
-
-2. **Execute o container**:
-
-   ```bash
-   docker run -d -p 8000:8000 cotas-investimento-api
-   ```
-
-3. **Acesse a API**:
-
-   - Acesse a documentação do Swagger UI em:
-     ```
-     http://127.0.0.1:8000/docs
-     ```
-
----
-
 ## Rodando os Testes
 
 Para rodar os testes automatizados, utilize o comando abaixo:
@@ -132,8 +150,10 @@ pytest -v
 │   │   └── schemas.py           # Esquemas de validação
 │   ├── tests/
 │   │   └── test_main.py         # Testes automatizados
+|   ├── create_db.py             # Ponto de criar banco
 │   └── main.py                  # Ponto de entrada da aplicação
 ├── Dockerfile                   # Configuração do Docker
 ├── requirements.txt             # Dependências do projeto
+├── .gitignore                   # Dependências ignoradas
 └── README.md                    # Documentação do projeto
 ```
