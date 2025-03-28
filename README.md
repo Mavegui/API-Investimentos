@@ -57,7 +57,7 @@ Fornecer uma API robusta e bem documentada para:
 - **Pydantic**: Validação e serialização de dados.
 - **Docker**: Para containerização e fácil implantação.
 - **pytest**: Para testes automatizados.
-- **Banco de dados**; SQLite3
+- **Banco de dados**: SQLite3
 
 ---
 
@@ -102,7 +102,7 @@ Fornecer uma API robusta e bem documentada para:
 - **GET /cotas/{cota_id}**: Obtém os detalhes de uma cota específica.
 - **PUT /cotas/{cota_id}**: Atualiza uma cota existente.
 - **DELETE /cotas/{cota_id}**: Deleta uma cota.
-- **GET /cotas/{cota_id}/profit**: Mostra o dados que são calculados.
+- **GET /cotas/{cota_id}/profit**: Mostra os dados que são calculados.
 
 ---
 
